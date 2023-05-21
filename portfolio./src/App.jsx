@@ -1,8 +1,8 @@
 import React from 'react';
 import './index.css';
 import Header from './components/header/Header';
-import Navbar from './components/navbar/Navbar'
-
+import Navbar from './components/navbar/Navbar';
+import About from './components/about/About' ;
 
 function App() {
 
@@ -11,6 +11,7 @@ function App() {
             <>
                 <Header/>
                 <Navbar/>
+                <About />
              
             </>
 
