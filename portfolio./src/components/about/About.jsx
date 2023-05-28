@@ -1,6 +1,6 @@
 import React from 'react'
 import './about.css'
-import moi from '../../assets/gilles.png'
+import moi from '../../assets/gilles.jpg'
 import {FaAward} from 'react-icons/fa'
 import {FiUsers} from 'react-icons/fi'
 import {VscFolderLibrary} from 'react-icons/vsc'
@@ -21,32 +21,22 @@ const About = () => {
               <article className="about__card">
                 <FaAward className="about__icon" />
                 <h5>Experience</h5>
-                <small>1+ Years</small>
+                <small>1- Years</small>
               </article>
               <article className="about__card">
                 <FiUsers className="about__icon" />
                 <h5>Clients</h5>
-                <small>3 world widely</small>
+                <small>0 world widely</small>
               </article>
               <article className="about__card">
                 <VscFolderLibrary className="about__icon" />
                 <h5>Projects</h5>
-                <small>2 Completed</small>
+                <small>1 Completed</small>
               </article>
             </div>
             <p>
-              I am a young software engineer trained at the Faculty of
-              Engineering and Technology(FET) of the University of Buea . I get
-              my B.eng in 2021. Being on demand for experience, I apply to
-              Camsol.io which accepts me and gives me the chance to work on real
-              business projects in order to gain experience. From July 2021 to
-              today, I learned technologies such as react, react native, in
-              short the MERN stack, I am still learning and counting on the
-              support of Camsol to increase my knowledge at end of being an
-              engineer not only graduate, but also qualified. I hold a
-              French-speaking baccalaureate D sexion, my university studies at
-              FET I did in English. I can therefore express myself in French and
-              in English (average).
+              I am a growing Sotware Engineer From Faculty of Engineering and Technology <strong>FET</strong> at University of Buea. Been in demand for experience I developed shkills in Web Development and Ux/Ui Design in order to futher my school knowledge.I also compile qualities like motivation, creativity and determination which make me grow in productivity and professionally. I hold a
+              Advanced A & O level cerficate from G.B.H.S Deido, .
             </p>
             <a href="#contact" className="btn btn-primary">
               Let's talk

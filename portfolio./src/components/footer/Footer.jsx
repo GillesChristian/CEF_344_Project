@@ -10,7 +10,7 @@ const Footer = () => {
     return (
       <div className="footer__container">
         <a href="#header" className="footer__logo">
-          Brown Alden
+          Gilles Christian
         </a>
 
         <ul className="permalinks">
@@ -21,13 +21,10 @@ const Footer = () => {
             <a href="#about">About</a>
           </li>
           <li>
-            <a href="#experience">Experience</a>
+            <a href="#experience">Backgroud</a>
           </li>
           <li>
             <a href="#services">Services</a>
-          </li>
-          <li>
-            <a href="#portfolio">Portfolio</a>
           </li>
           <li>
             <a href="#testimonials">testimonials</a>
