@@ -33,18 +33,17 @@ const Footer = () => {
             <a href="#contact">Contact</a>
           </li>
         </ul>
-
         <div className="footer__media">
-          <a href="https://linkedin.com" target="blank">
+          <a href="https://linkedin.com/in/kamdem-kamgaing-gilles-christian-b73338251" target="blank">
             <BsLinkedin />
           </a>
-          <a href="https://github.com" target="blank">
+          <a href="https://github.com/GillesChristian" target="blank">
             <FaGithub />
           </a>
-          <a href="https://facebook.com" target="blank">
+          <a href="https://facebook.com/ptofile.php?id=100072927796154" target="blank">
             <FaFacebookF />
           </a>
-          <a href="https://twitter.com" target="blank">
+          <a href="https://twitter.com/@GillesChristi12" target="blank">
             <CgTwitter />
           </a>
         </div>

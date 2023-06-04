@@ -9,7 +9,7 @@ export const Services = () => {
     <section id="service">
       <h5>What i offer</h5>
       <h2>Services</h2>
-      <div className="container services__container">
+      <div className="services__container">
         <div className="services_list">
             <div className="services_list_header">
                 <img src={ux} alt="Ux/Ui Design" />
