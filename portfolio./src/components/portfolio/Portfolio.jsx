@@ -7,7 +7,7 @@ export const Portfolio = () => {
     {
       image : img1,
       github: 'https://github.com/GillesChristian/CEF_344_Project.git',
-      demo: 'https://paterson-nguepi.netlify.app/',
+      demo: 'https://gilleschristian.netlify.app/',
       id: 1,
       title:'Portfolio'
     },
