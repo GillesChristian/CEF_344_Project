@@ -4,22 +4,24 @@ import {MdOutlineEmail} from 'react-icons/md'
 import {AiOutlineLinkedin} from 'react-icons/ai'
 import {BsWhatsapp} from 'react-icons/bs'
 import {useRef} from 'react'
-//import emailjs from 'emailjs-com'
+import emailjs from '@emailjs/browser'
+
+//npm install @emailjs/browser
 
 const Contact = () => {
   const form = useRef();
 
-//   const sendEmail = (e) => {
-//       e.preventDefault();
+  const sendEmail = (e) => {
+      e.preventDefault();
 
-//       emailjs.sendForm('service_5vuauza', 'template_fdnnl56', form.current, 'EmSdUNQzQuxkUqGWx')
-//       e.target.reset() 
-//       .then((result) => {
-//         console.log(result.text)
-//       },(error) =>{
-//         console.log(error.text);
-//       });
-//   };
+      emailjs.sendForm('service_9pwfn08', 'template_31qty1l', form.current, 'xvM__YSSm0Tt6LNlg')
+      e.target.reset() 
+      .then((result) => {
+        console.log(result.text)
+      },(error) =>{
+        console.log(error.text);
+      });
+  };
     return (
       <section id="contact">
         <h5>Get in touch</h5>
@@ -67,7 +69,7 @@ const Contact = () => {
             </article>
           </div>
 
-          <form ref={form} /*onSubmit={sendEmail}*/>
+          <form ref={form} onSubmit={sendEmail}>
             <input type="text" name="name" placeholder="full name" required />
             <input
               type="email"
