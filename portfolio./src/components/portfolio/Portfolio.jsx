@@ -1,54 +1,60 @@
-import React from "react";
+import React, {useEffect, useState} from 'react';
+import axios from 'axios';
 import "./portfolio.css";
-import img1 from "../../assets/screen.png";
+
 
 export const Portfolio = () => {
-  const portfolioContent = [
-    {
-      image : img1,
-      github: 'https://github.com/GillesChristian/CEF_344_Project.git',
-      demo: 'https://gilleschristian.netlify.app/',
-      id: 1,
-      title:'Portfolio'
-    },
+  const[data, setData] = useState([]);
 
-  ]
+  useEffect(()=> {
+    axios.get("https://gilleschristian.cyclic.app/api/portfolios").then(response => {
+      const formattedData = response.data.data.map(item => ({
+        id: item._id,
+        image: item.image,
+        title: item.title,
+        github: item.github,
+        demo: item.demo
+      }));
+      setData(formattedData)
+    }).catch(error => {
+      console.log("Error fetching portfolio data:", error);
+    })
+  }, [])
+
   return (
     <section id="portfolio">
       <h5>My recent work</h5>
       <h2>Portfolio</h2>
       <div className="container portfolio__container">
       {
-        portfolioContent.map((content, id) =>{
-          return (
+        data.map(({id, image, title, github, demo}) =>(
+          // return (
             <article key={id} className="portfolio__item">
-              <div className="portfolio_item_image">
-                <img src={content.image} alt=" one" className="portImage" />
+              <div className="portfolio__item__image">
+                <img src={image} alt={title} className="portImage" />
               </div>
-              <h3> {content.title} </h3>
-              <div className="portfolio_item_cta">
+              <h3> {title} </h3>
+              <div className="portfolio__item__cta">
                 <a
-                  href={content.github}
+                  href={github}
                   className="btn"
                   target="_blank"
-                  rel="noreferrer"
+                  rel="noopener noreferrer"
                 >
                   Github
                 </a>
                 <a
-                  href={content.demo}
+                  href={demo}
                   className="btn btn-primary"
                   target="blank"
-                  rel="noreferrer"
+                  rel="noopener noreferrer"
                 >
                   Live Demo
                 </a>
               </div>
             </article>
-          );
-        }
-        
-        )
+          // );
+        ))
       }
       </div>
     </section>

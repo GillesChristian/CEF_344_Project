@@ -1,67 +1,29 @@
-import React from "react";
-import "./testimonial.css";
-import IMG from "../../assets/gilles.jpg";
-import AV1 from "../../assets/gilles.jpg";
-import AV2 from "../../assets/gilles.jpg";
-import AV3 from "../../assets/gilles.jpg";
-import AV4 from "../../assets/gilles.jpg";
-import AV5 from "../../assets/gilles.jpg";
-
-// import Swiper core and required modules
+import React, {useEffect, useState} from 'react';
+import axios from 'axios';
+import "./testimonial.css"
+import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Navigation, Scrollbar, A11y } from 'swiper';
 
-import { Swiper, SwiperSlide } from 'swiper/react';
-
-// Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/pagination';
 
-
 export const Testimonial = () => {
-  const testimonials = [
-    {
-      id: 1,
-      testimonial:
-        "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Delectus est, consequatur illum ullam numquam voluptate necessitatibus sequi quidem obcaecati! Veritatis repellendus provident neque. Porro, id illum iure soluta vel alias, maiores tempora doloremque vitae neque maxime at, facilis ipsum molestiae dicta quasi harum optio atque deserunt quis amet consectetur perspiciatis.",
-      avatar: IMG,
-      Cname: "Christian",
-    },
-    {
-      id: 2,
-      testimonial:
-        "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Delectus est, consequatur illum ullam numquam voluptate necessitatibus sequi quidem obcaecati! Veritatis repellendus provident neque. Porro, id illum iure soluta vel alias, maiores tempora doloremque vitae neque maxime at, facilis ipsum molestiae dicta quasi harum optio atque deserunt quis amet consectetur perspiciatis.",
-      avatar: AV1,
-      Cname: "Michelle",
-    },
-    {
-      id: 3,
-      testimonial:
-        "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Delectus est, consequatur illum ullam numquam voluptate necessitatibus sequi quidem obcaecati! Veritatis repellendus provident neque. Porro, id illum iure soluta vel alias, maiores tempora doloremque vitae neque maxime at, facilis ipsum molestiae dicta quasi harum optio atque deserunt quis amet consectetur perspiciatis.",
-      avatar: AV2,
-      Cname: "David",
-    },
-    {
-      id: 4,
-      testimonial:
-        "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Delectus est, consequatur illum ullam numquam voluptate necessitatibus sequi quidem obcaecati! Veritatis repellendus provident neque. Porro, id illum iure soluta vel alias, maiores tempora doloremque vitae neque maxime at, facilis ipsum molestiae dicta quasi harum optio atque deserunt quis amet consectetur perspiciatis.",
-      avatar: AV3,
-      Cname: "Gilles",
-    },
-    {
-      id: 5,
-      testimonial:
-        "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Delectus est, consequatur illum ullam numquam voluptate necessitatibus sequi quidem obcaecati! Veritatis repellendus provident neque. Porro, id illum iure soluta vel alias, maiores tempora doloremque vitae neque maxime at, facilis ipsum molestiae dicta quasi harum optio atque deserunt quis amet consectetur perspiciatis.",
-      avatar: AV5,
-      Cname: "Merveille",
-    },
-    {
-      id: 6,
-      testimonial:
-        "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Delectus est, consequatur illum ullam numquam voluptate necessitatibus sequi quidem obcaecati! Veritatis repellendus provident neque. Porro, id illum iure soluta vel alias, maiores tempora doloremque vitae neque maxime at, facilis ipsum molestiae dicta quasi harum optio atque deserunt quis amet consectetur perspiciatis.",
-      avatar: AV4,
-      Cname: "Emmanuel",
-    },
-  ];
+  const[data, setData] = useState([]);
+
+  useEffect(()=> {
+    axios.get("https://gilleschristian.cyclic.app/api/testimonials").then(response => {
+      const formattedData = response.data.data.map(item => ({
+        id: item._id,
+        avatar: item.avatar,
+        name: item.name,
+        review: item.review
+      }));
+      setData(formattedData)
+    }).catch(error => {
+      console.log("Error fetching portfolio data:", error);
+    })
+  }, [])
+  
   return (
     <section id="testimonial">
       <h5>Review from client</h5>
@@ -72,18 +34,18 @@ export const Testimonial = () => {
       spaceBetween={40}
       slidesPerView={1}
       pagination={{ clickable: true }}
+      // scrollbar={{ draggable: true }}
       >
-        {testimonials.map((testi) => {
-          return (
-            <SwiperSlide key={testi.id} className="testimonial">
+        {data.map(({id, avatar, name, review}) => (
+            <SwiperSlide key={id} className="testimonial">
               <div className="client__avatar">
-                <img src={testi.avatar} alt="client avatar" />
+                <img src={avatar} alt= {name} />
               </div>
-              <h5 className="client__name"> {testi.Cname} </h5>
-              <small className="client__review"> {testi.testimonial} </small>
+              <h5 className="client__name"> {name} </h5>
+              <small className="client__review"> {review} </small>
             </SwiperSlide>
-          );
-        })}
+          
+        ))}
       </Swiper>
     </section>
   );
