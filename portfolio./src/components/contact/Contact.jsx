@@ -13,9 +13,8 @@ const Contact = () => {
 
   const sendEmail = (e) => {
       e.preventDefault();
-
-      emailjs.sendForm('service_9pwfn08', 'template_31qty1l', form.current, 'xvM__YSSm0Tt6LNlg')
-      e.target.reset() 
+      
+      return emailjs.sendForm('service_9pwfn08', 'template_31qty1l', form.current, 'xvM__YSSm0Tt6LNlg') 
       .then((result) => {
         console.log(result.text)
       },(error) =>{
