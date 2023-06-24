@@ -1,6 +1,8 @@
 // Select the database to use.
 use('Backend-Porfolio');
 
+//  ################################ CREATION ###############################
+
 // Insert a few documents into the PortfolioData collection.
 // db.getCollection('portfolios').insertMany(
 //     [
@@ -28,31 +30,71 @@ use('Backend-Porfolio');
 //     ]
 // );
 
-// Insert a few documents into the PortfolioData collection.
-db.getCollection('testimonials').insertMany(
- [
-        {
-          avatar: 'https://gilleschristian.netlify.app/static/media/gilles.f8b7f62400a107ccd881.jpg',
-          name: 'smith Brown',
-          review: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus velit omnis deserunt corrupti perferendis quisquam officia cupiditate ut impedit magnam iusto numquam odio eos, itaque, explicabo ipsum esse dolorem unde!"
-        },
+//Insert a few documents into the PortfolioData collection.
+// db.getCollection('testimonials').insertMany(
+//  [
+//         {
+//           avatar: 'https://gilleschristian.netlify.app/static/media/gilles.f8b7f62400a107ccd881.jpg',
+//           name: 'smith Brown',
+//           review: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus velit omnis deserunt corrupti perferendis quisquam officia cupiditate ut impedit magnam iusto numquam odio eos, itaque, explicabo ipsum esse dolorem unde!"
+//         },
         
-        {
-          avatar: 'https://gilleschristian.netlify.app/static/media/gilles.f8b7f62400a107ccd881.jpg',
-          name: 'Tina Wolf ',
-          review: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus velit omnis deserunt corrupti perferendis quisquam officia cupiditate ut impedit magnam iusto numquam odio eos, itaque, explicabo ipsum esse dolorem unde!"
-        },
-        {
-          avatar: 'https://gilleschristian.netlify.app/static/media/gilles.f8b7f62400a107ccd881.jpg',
-          name: 'Kevin Adams',
-          review: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus velit omnis deserunt corrupti perferendis quisquam officia cupiditate ut impedit magnam iusto numquam odio eos, itaque, explicabo ipsum esse dolorem unde!"
-        },
-        {
-          avatar: 'https://gilleschristian.netlify.app/static/media/gilles.f8b7f62400a107ccd881.jpg',
-          name: 'Louisa Eliot',
-          review: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus velit omnis deserunt corrupti perferendis quisquam officia cupiditate ut impedit magnam iusto numquam odio eos, itaque, explicabo ipsum esse dolorem unde!"
-        },
+//         {
+//           avatar: 'https://gilleschristian.netlify.app/static/media/gilles.f8b7f62400a107ccd881.jpg',
+//           name: 'Tina Wolf ',
+//           review: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus velit omnis deserunt corrupti perferendis quisquam officia cupiditate ut impedit magnam iusto numquam odio eos, itaque, explicabo ipsum esse dolorem unde!"
+//         },
+        // {
+        //   avatar: 'https://gilleschristian.netlify.app/static/media/gilles.f8b7f62400a107ccd881.jpg',
+        //   name: 'Kevin Adams',
+        //   review: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus velit omnis deserunt corrupti perferendis quisquam officia cupiditate ut impedit magnam iusto numquam odio eos, itaque, explicabo ipsum esse dolorem unde!"
+        // },
+//         {
+//           avatar: 'https://gilleschristian.netlify.app/static/media/gilles.f8b7f62400a107ccd881.jpg',
+//           name: 'Louisa Eliot',
+//           review: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus velit omnis deserunt corrupti perferendis quisquam officia cupiditate ut impedit magnam iusto numquam odio eos, itaque, explicabo ipsum esse dolorem unde!"
+//         },
       
       
-      ]
-);
+//       ]
+// );
+
+//  ################################ UPDATE ###############################
+
+// Update a few documents into the PortfolioData collection.
+// db.getCollection('portfolios').updateOne(
+//     { title: 'Portfolio' },
+//     { $set: { demo: 'https://christiangilles.netlify.app/' } }
+//  )
+
+
+// // Update a few documents into the TestimonialData collection.
+// db.getCollection('testimonials').updateOne(
+//     { name: 'Tina Wolf' },
+//     { $set: { review: 'Good Day ...' } }
+//  )
+
+
+// //  ################################ DELETE ###############################
+
+// Delete a few documents into the PortfolioData collection.
+// db.getCollection('portfolios').deleteOne(
+//     {title: "Recipe app design"}
+//     )
+
+// // Delete a few documents into the PortfolioData collection.
+// db.getCollection('testimonials').deleteOne(
+//     { name: "Kevin Adams"}
+//     )
+// //  ################################ FIND ###############################
+
+// // Find a few documents into the PortfolioData collection.
+// db.getCollection('portfolios').find(
+//     { title: { $gt: "Portfolio" } }
+//     )
+
+// // Find a few documents into the PortfolioData collection.
+// db.getCollection('testimonials').find(
+//     { name: { $gt: 'Louisa Eliot' } }
+//     )
+
