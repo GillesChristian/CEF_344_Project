@@ -2,8 +2,10 @@
     justify-content: center;
     width: 100%;
     display: flex; 
+   
     gap: 4rem;
     justify-content: center;
+    padding: 20px;
 } 
 
 .portfolio__item{
@@ -35,13 +37,19 @@
     display: flex;
     align-items: center;
     margin-bottom:1rem;
-    gap: 1rem;
+    gap: 3rem;
     justify-content:center;
 }
 
 @media screen and (max-width:1024px) {
     .portfolio__item{
-        width: 80%;
+        width: 70%;
+    }
+    
+}
+@media screen and (max-width:724px) {
+    .portfolio__container{
+       flex-wrap: wrap;
     }
     
 }
